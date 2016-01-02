@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 
+  latitude: 
+  longitude: 
+  longitude: 
+  team: 
+
+two:
+  latitude: 
+  latitude: 
+  longitude: 
+  longitude: 
+  team: 
