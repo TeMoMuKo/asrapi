@@ -1,7 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+team1:
+  name: "Team 1"
 
-one:
-  name: MyString
+team2:
+  name: "Team 2"
 
-two:
-  name: MyString
+team_empty:
+  name: "Team 3"

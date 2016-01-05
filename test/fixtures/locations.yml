@@ -1,15 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+team1_location1:
+  latitude: 21.37
+  longitude: 37.21
+  team: team1
 
-one:
-  latitude: 
-  latitude: 
-  longitude: 
-  longitude: 
-  team: 
+team1_location2:
+  latitude: 37.21
+  longitude: 21.37
+  team: team1
 
-two:
-  latitude: 
-  latitude: 
-  longitude: 
-  longitude: 
-  team: 
+team2_location1:
+  latitude: 37.21
+  longitude: 21.37
+  team: team2
