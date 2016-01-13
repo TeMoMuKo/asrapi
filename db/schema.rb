@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 20160105194350) do
   create_table "locations", force: :cascade do |t|
     t.decimal  "latitude",   precision: 6, scale: 10
     t.decimal  "longitude",  precision: 6, scale: 10
+    t.string   "message",                             default: "", null: false
     t.integer  "team_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.index ["team_id"], name: "index_locations_on_team_id"
   end
 

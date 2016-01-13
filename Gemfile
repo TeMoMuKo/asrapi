@@ -21,6 +21,9 @@ gem "omniauth-google-oauth2"
 
 group :development, :test do
   gem "byebug"
+  gem "pry-byebug"
+  gem "rspec-rails", "~> 3.0"
+  gem "factory_girl_rails"
 end
 
 group :development do
