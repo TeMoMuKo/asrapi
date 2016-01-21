@@ -1,7 +1,16 @@
 class LocationsController < ApplicationController
-  before_action :set_team, only: [:create]
-  before_action :set_location, only: [:update]
+  before_action :set_team, only: [:index, :create]
+  before_action :set_location, only: [:show]
 
+  def index
+    @locations = @team.locations
+  end
+
+  # GET /locations/1
+  def show
+  end
+
+  # POST /teams/:team_id/locations
   def create
     @location = @team.locations.new(location_params)
     if @location.save
