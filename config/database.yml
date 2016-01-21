@@ -16,6 +16,7 @@ production:
   adapter: postgresql
   encoding: utf8
   database: asrapi_production
+  template: template0
   pool: 5
   timeout: 5000
   username: <%= ENV['ASRAPI_DATABASE_USER'] %>
