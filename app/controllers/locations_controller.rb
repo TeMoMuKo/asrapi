@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_team, only: [:index, :create]
-  #before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create]
   before_action :set_location, only: [:show]
 
   ##
