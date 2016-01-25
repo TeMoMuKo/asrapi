@@ -14,16 +14,6 @@ class LocationsController < ApplicationController
   end
 
   ##
-  # Returns a given location
-  #
-  # GET /locations/1
-  #
-  # params:
-  #     location_id - id of Location to fetch
-  def show
-  end
-
-  ##
   # Create a new location for a given team
   #
   # POST /teams/:team_id/locations
