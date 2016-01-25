@@ -103,6 +103,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
     arel (7.0.0)
     bcrypt (3.1.10)
     builder (3.2.2)
@@ -150,6 +151,10 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    missing_validators (2.2.0)
+      activemodel
+      activesupport
+      addressable (~> 2.3)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     nokogiri (1.6.7.2)
@@ -259,6 +264,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  missing_validators
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

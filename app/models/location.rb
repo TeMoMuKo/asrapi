@@ -1,6 +1,6 @@
 class Location < ApplicationRecord
-  validates :latitude, numericality: true, presence: true
-  validates :longitude, numericality: true, presence: true
+  validates :latitude, numericality: true, presence: true, latitude: true
+  validates :longitude, numericality: true, presence: true, longitude: true
   validates :message, length: { maximum: 160 }
 
   belongs_to :team

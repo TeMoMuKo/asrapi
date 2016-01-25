@@ -18,6 +18,7 @@ gem "devise_token_auth", :github => "lynndylanhurley/devise_token_auth", :branch
 gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
+gem "missing_validators"
 
 group :development, :test do
   gem "byebug"
