@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
-  before_action :set_team, only: [:index, :create]
   before_action :authenticate_user!, only: [:create]
+  before_action :set_team, only: [:index]
   before_action :set_location, only: [:show]
 
   ##
@@ -17,12 +17,12 @@ class LocationsController < ApplicationController
   ##
   # Create a new location for a given team
   #
-  # POST /teams/:team_id/locations
+  # POST /locations
   #
   # params:
   #     team_id - id of Team to create a location for
   def create
-    @location = @team.locations.new(location_params)
+    @location = current_user.team.locations.new(location_params)
     if @location.save
       render json: @location, status: :created, location: @location
     else
