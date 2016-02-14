@@ -14,14 +14,15 @@
 ActiveRecord::Schema.define(version: 20160105194350) do
 
   create_table "locations", force: :cascade do |t|
-    t.decimal  "latitude",   precision: 6, scale: 10
-    t.decimal  "longitude",  precision: 6, scale: 10
+    t.decimal  "latitude",   precision: 10, scale: 6
+    t.decimal  "longitude",  precision: 10, scale: 6
     t.string   "message",                             default: "", null: false
     t.integer  "team_id"
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
-    t.index ["team_id"], name: "index_locations_on_team_id"
   end
+
+  add_index "locations", ["team_id"], name: "index_locations_on_team_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
@@ -55,10 +56,11 @@ ActiveRecord::Schema.define(version: 20160105194350) do
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["team_id"], name: "index_users_on_team_id"
-    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
+
+  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["team_id"], name: "index_users_on_team_id"
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
 
 end
