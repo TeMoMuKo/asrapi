@@ -11,6 +11,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "puma"
+gem "geocoder"
 
 gem "devise", :github => "plataformatec/devise", :branch => "master"
 gem "bcrypt", "~> 3.1.7"
