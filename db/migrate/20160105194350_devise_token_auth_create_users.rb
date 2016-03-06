@@ -3,7 +3,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       ## Custom fields
       t.string :first_name, :null => false, :default => ""
-      t.string :last_name, :null => false, :diefault => ""
+      t.string :last_name, :null => false, :default => ""
       t.references :team, index: true, foreign_key: true
 
       ## Required
