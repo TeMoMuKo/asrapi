@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160222173755) do
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             default: "",      null: false
-    t.string   "last_name",                                null: false
+    t.string   "last_name",              default: "",      null: false
     t.integer  "team_id"
     t.string   "provider",               default: "email", null: false
     t.string   "uid",                    default: "",      null: false
