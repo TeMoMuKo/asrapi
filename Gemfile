@@ -14,6 +14,7 @@ gem "puma"
 gem "geocoder"
 gem "haml-rails"
 gem "simple_form"
+gem "mailgunner"
 
 gem "devise", :github => "plataformatec/devise", :branch => "master"
 gem "bcrypt", "~> 3.1.7"

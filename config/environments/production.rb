@@ -81,17 +81,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configure ActionMailer
-  config.action_mailer.default_url_options = { :host => 'api.autostoprace.pl' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default :charset => "utf-8"
-  ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    domain: 'autostoprace.pl',
-    port: 587,
-    user_name: ENV['EMAIL_USERNAME'],
-    password: ENV['EMAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :mailgun
 end
