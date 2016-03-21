@@ -81,5 +81,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configure ActionMailer
+  config.action_mailer.default_url_options = { :host => 'api.autostoprace.pl' }
   config.action_mailer.delivery_method = :mailgun
 end
