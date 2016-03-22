@@ -89,6 +89,7 @@ Rails.application.configure do
   :user_name      => Rails.application.secrets.email_username,
   :password       => Rails.application.secrets.email_password,
   :domain         => Rails.application.secrets.email_domain,
-  :authentication => :plain
+  :authentication => :plain,
+  :openssl_verify_mode => :none
   }
 end
