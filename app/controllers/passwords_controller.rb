@@ -21,9 +21,9 @@ class PasswordsController < Devise::PasswordsController
 
   # protected
 
-  # def after_resetting_password_path_for(resource)
-  #   super(resource)
-  # end
+  def after_resetting_password_path_for(resource)
+    "http://www.autostoprace.pl/haslo-zostalo-zmienione/"
+  end
 
   # The path used after sending reset password instructions
   # def after_sending_reset_password_instructions_path_for(resource_name)

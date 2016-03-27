@@ -19,8 +19,7 @@ class ConfirmationsController < Devise::ConfirmationsController
 
     if resource.valid? && resource.password_match?
       self.resource.confirm!
-      set_flash_message :notice, :confirmed
-      sign_in_and_redirect resource_name, resource
+      redirect "http://www.autostoprace.pl/konto-zostalo-aktywowane/"
     else
       render :action => 'show'
     end
