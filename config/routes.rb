@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :teams, only: [:index, :show] do
-    resources :locations, shallow: true, only: [:index, :show]
+  resources :teams, defaults: { format: :json }, only: [:index, :show] do
+    resources :locations, defaults: { format: :json }, shallow: true, only: [:index, :show]
   end
   post "/locations", to: "locations#create"
 end

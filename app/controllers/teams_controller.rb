@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
   # GET /teams
   def index
     @teams = Team.all
+    render json: @teams
   end
 
   ##
@@ -17,6 +18,7 @@ class TeamsController < ApplicationController
   # params:
   #     team_id - id of Team to fetch
   def show
+    render json: @team
   end
 
   private
