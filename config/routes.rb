@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "map#index"
+
   devise_for :users, controllers: {
     confirmations: 'confirmations',
     passwords: 'passwords',
