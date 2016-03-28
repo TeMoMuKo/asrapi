@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show]
+  respond_to :json
 
   ##
   # Returns a list of all Teams with their last known location
@@ -7,7 +8,6 @@ class TeamsController < ApplicationController
   # GET /teams
   def index
     @teams = Team.all
-    render json: @teams
   end
 
   ##
@@ -18,7 +18,6 @@ class TeamsController < ApplicationController
   # params:
   #     team_id - id of Team to fetch
   def show
-    render json: @team
   end
 
   private

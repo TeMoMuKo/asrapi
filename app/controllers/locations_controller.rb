@@ -12,7 +12,6 @@ class LocationsController < ApplicationController
   #     team_id - id of Team to fetch locations for
   def index
     @locations = @team.locations
-    render json: @locations
   end
 
   ##

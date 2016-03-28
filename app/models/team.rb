@@ -5,7 +5,7 @@ class Team < ApplicationRecord
   has_many :users
 
   def last_location
-    locations.order('created_at DESC').first
+    locations.reorder('created_at DESC').first(1)
   end
 
   def to_s
