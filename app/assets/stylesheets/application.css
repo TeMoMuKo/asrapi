@@ -60,9 +60,48 @@ input, button {
   border-radius: 4px;
   border: 0px;
   padding: 15px 30px;
+  margin-bottom: 15px;
   display: inline-block;
 }
 
 .link_below {
   margin: 15px 0;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+.field_with_errors {
+}
+
+.simple_form .error {
+  clear: left;
+  display: block;
+  margin-left: 120px;
+}
+
+.simple_form .hint {
+  clear: left;
+  margin-left: 120px;
+  display: block;
+  font-style: italic;
+}
+
+input.radio {
+  margin-right: 5px;
+  vertical-align: -3px;
+}
+
+input.check_boxes {
+  margin-left: 3px;
+  vertical-align: -3px;
 }
