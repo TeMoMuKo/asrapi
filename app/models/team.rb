@@ -8,6 +8,10 @@ class Team < ApplicationRecord
     locations.reorder('created_at DESC').first(1)
   end
 
+  def polyline
+    locations.map { |location| { lat: location.latitude, lng: location.longitude } }
+  end
+
   def to_s
     name
   end

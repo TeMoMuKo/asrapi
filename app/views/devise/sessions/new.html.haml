@@ -1,0 +1,8 @@
+%h2 Zaloguj się
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-inputs
+    = f.input :email, label: false, placeholder: "Adres email", required: false, autofocus: true
+    = f.input :password, label: false, placeholder: "Hasło", required: false
+  .form-actions
+    = f.button :submit, "Zaloguj się"
+= render "devise/shared/links"

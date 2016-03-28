@@ -15,6 +15,8 @@ gem "geocoder"
 gem "haml-rails"
 gem "simple_form"
 gem "rails-i18n"
+gem "gmaps4rails"
+gem "polylines"
 
 gem "devise", :github => "plataformatec/devise", :branch => "master"
 gem "bcrypt", "~> 3.1.7"
