@@ -2,9 +2,10 @@
 %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 #map
 :javascript
+  var mapStyle = [{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}];
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {zoom: 5}, internal: {id: 'map'}}, function(){
-    polyline = handler.addPolyline(#{@polyline.to_json})
-    handler.bounds.extendWith(polyline)
+  handler.buildMap({ provider: {zoom: 5, styles: mapStyle}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(#{@markers.to_json});
+    handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });

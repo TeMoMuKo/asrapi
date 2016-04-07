@@ -8,8 +8,8 @@ class Team < ApplicationRecord
     locations.reorder('created_at DESC').first(1)
   end
 
-  def polyline
-    locations.map { |location| { lat: location.latitude, lng: location.longitude } }
+  def markers
+    locations.map { |location| { lat: location.latitude, lng: location.longitude, infowindow: "<strong>#{location.team.name}</strong><br /><small>#{location.created_at.time}</small><br />#{location.message}" }}
   end
 
   def to_s
