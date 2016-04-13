@@ -8,8 +8,17 @@ body {
   height: 100%;
 }
 
+#menu {
+  float: right;
+  width: 20%;
+}
+
+#menu > ul {
+  list-style: none;
+}
+
 #map {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 
