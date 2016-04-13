@@ -13,7 +13,9 @@ class Team < ApplicationRecord
   end
 
   def number
-    /\d+/.match(name)
+    n = name.delete("^0-9")
+    return -1 if n.empty?
+    n.to_i
   end
 
   def to_s
