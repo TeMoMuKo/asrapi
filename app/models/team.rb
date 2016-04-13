@@ -12,6 +12,10 @@ class Team < ApplicationRecord
     locations.map { |location| { lat: location.latitude, lng: location.longitude, infowindow: "<strong>#{location.team.name}</strong><br /><small>#{location.created_at.time}</small><br />#{location.message}" }}
   end
 
+  def number
+    /\d+/.match(name)
+  end
+
   def to_s
     name
   end

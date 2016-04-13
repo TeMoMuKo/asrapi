@@ -1,26 +1,22 @@
 %script{:src => "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", :type => "text/javascript"}
 %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 #menu
+  %input#search(placeholder="Wpisz numer drużyny" type="text"){onkeyup: "searchTeams()"}
   %ul
     - @teams.each do |team|
-      %li
-        %input(type="checkbox"){id: "team#{team.id}", onClick: "changeTeams()"}= team.name
+      %li{style: "display: none;", class: "li#{team.number}"}= team.name
 #map
 :javascript
   var _markers = #{@markers};
   var visibleMarkers = [];
-  var mapStyle = [{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}];
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {zoom: 5, styles: mapStyle, center: new google.maps.LatLng(51, 20)}, internal: {id: 'map'}}, function() {
+  handler.buildMap({ provider: {zoom: 5, center: new google.maps.LatLng(51, 20)}, internal: {id: 'map'}}, function() {
   });
 
-  function changeTeams() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"][id^="team"]:checked')
-    var teams = Array.from(checkboxes).map(function (team) { return team.id.replace("team", "") });
-    console.log(teams);
+  function searchTeams() {
+    var searchTerm = document.getElementById("search").value
     handler.removeMarkers(visibleMarkers);
-    visibleMarkers = teams.map(function (key) { return _markers[key] }).reduce(function(a, b) { return a.concat(b); }, []);
+    visibleMarkers = _markers[searchTerm]
     visibleMarkers = handler.addMarkers(visibleMarkers);
     handler.bounds.extendWith(visibleMarkers);
-    //handler.fitMapToBounds();
   }
