@@ -22,6 +22,6 @@ class TeamsController < ApplicationController
 
   private
   def set_team
-    @team = Team.find(params[:id])
+    @team = Team.friendly.find(params[:id])
   end
 end

@@ -17,6 +17,7 @@ gem "simple_form"
 gem "rails-i18n"
 gem "gmaps4rails"
 gem "polylines"
+gem "friendly_id", "~> 5.1.0"
 
 gem "devise", :github => "plataformatec/devise", :branch => "master"
 gem "bcrypt", "~> 3.1.7"
@@ -31,6 +32,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.0"
   gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :development do
@@ -39,7 +41,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
