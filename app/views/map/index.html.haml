@@ -2,7 +2,7 @@
 -#%script{:src => "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 %script{src: "markerclusterer_packed.js", :type => "text/javascript"}
 #menu
-  %input#search(placeholder="Wpisz numer drużyny" type="text"){onkeyup: "searchTeams()"}
+  %input#search(placeholder="Wpisz numer drużyny" type="text"){value: @team_no, onkeyup: "searchTeams()"}
   %ul
     - @teams.each do |team|
       %li{style: "display: none;", class: "li#{team.number}"}= team.name
@@ -12,6 +12,7 @@
   var visibleMarkers = [];
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {zoom: 5, center: new google.maps.LatLng(51, 20)}, internal: {id: 'map'}}, function() {
+    searchTeams();
   });
 
   function searchTeams() {
