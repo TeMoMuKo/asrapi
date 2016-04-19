@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
   belongs_to :team
 
   def password_required?
-        super if confirmed?
+    super if confirmed?
+  end
+
+  def team_number
+    team.number
   end
 
   def password_match?
