@@ -17,7 +17,7 @@
 body {
   width: 100%;
   height: 100%;
-  color:#fff;
+  color: #fff;
   background: url("bg.jpg") repeat;
   position: fixed;
   z-index: 666999;
@@ -33,6 +33,10 @@ a, a:hover {
   text-decoration:none;
   font-weight:600;
   color:#fff;
+}
+
+#devise {
+  padding: 20px;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
