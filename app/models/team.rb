@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+  include ActionView::Helpers::TagHelper
   include FriendlyId
   friendly_id :name, use: [:slugged]
   validates :name, presence: true
@@ -10,8 +11,12 @@ class Team < ApplicationRecord
     locations.reorder('created_at DESC').first(1)
   end
 
+  def infowindow(location)
+     "".html_safe + content_tag(:strong, location.team.name) + content_tag(:br) + content_tag(:small, location.created_at.time) + content_tag(:br) + location.message
+  end
+
   def markers
-    locations.map { |location| { lat: location.latitude, lng: location.longitude, infowindow: "<strong>#{location.team.name}</strong><br /><small>#{location.created_at.time}</small><br />#{location.message}" }}
+    locations.map { |location| { lat: location.latitude, lng: location.longitude, infowindow: infowindow(location) }}
   end
 
   def number
