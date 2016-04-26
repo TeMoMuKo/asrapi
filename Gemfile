@@ -25,6 +25,9 @@ gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "missing_validators"
 
+gem "devise-i18n"
+gem "rails-i18n", "~> 5.0.0.beta3"
+
 group :development, :test do
   gem "byebug"
   gem "pry-byebug"
