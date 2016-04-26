@@ -206,6 +206,7 @@ GEM
     puma (3.2.0)
     rack (2.0.0.alpha)
       json
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails-deprecated_sanitizer (1.0.3)
@@ -305,6 +306,7 @@ DEPENDENCIES
   polylines
   pry-byebug
   puma
+  rack-cors
   rails!
   rails-i18n
   rspec-rails (~> 3.0)

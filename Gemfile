@@ -18,6 +18,7 @@ gem "rails-i18n"
 gem "gmaps4rails"
 gem "polylines"
 gem "friendly_id", "~> 5.1.0"
+gem "rack-cors", require: "rack/cors"
 
 gem "devise", :github => "plataformatec/devise", :branch => "master"
 gem "bcrypt", "~> 3.1.7"
