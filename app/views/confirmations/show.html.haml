@@ -1,10 +1,13 @@
-#confirmation
+#devise
   %h2 Już prawie koniec! W celach bezpieczeństwa musisz ustawić nowe hasło.
-  = simple_form_for(resource, :as => resource_name, :url => confirm_path) do |form|
+  = form_for(resource, :as => resource_name, :url => confirm_path) do |form|
     = devise_error_messages!
+    = form.hidden_field :confirmation_token, value: @original_token
 
-    = form.input :password, placeholder: "Podaj hasło (min. 8 znaków)", label: false, autofocus: true
-    = form.input :password_confirmation, placeholder: "Potwierdź hasło", label: false
-    = form.input :confirmation_token, :as => :hidden, :input_html => { :value => @original_token }
+    .field
+      = form.password_field :password, placeholder: "Podaj hasło (min. 8 znaków)", autofocus: true
+    .field
+      = form.password_field :password_confirmation, placeholder: "Potwierdź hasło"
 
-    = form.button :submit, "Zakończ rejestrację", class: "btn"
+    .actions
+      = form.submit "Zakończ rejestrację", class: "btn"

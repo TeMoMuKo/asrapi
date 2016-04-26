@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/lynndylanhurley/devise_token_auth.git
-  revision: 3a0a1267618239610a499f5de1f5fd4b71ea28c7
+  revision: 10863b31270b31cec72a07e1a195aa21686ede2b
   branch: master
   specs:
     devise_token_auth (0.1.37)
@@ -9,10 +9,10 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 2b3799e6ceb315172d14a16103ab9fb1702f79fc
+  revision: 0c1a14e8f251ea9dd28c467f48877fcaaf5c3a14
   branch: master
   specs:
-    devise (4.0.0.rc2)
+    devise (4.0.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 475109c517e724c015ee13061416568a7d6b9757
+  revision: cacded5a0e0acc0582c2778b9dd8df684451ad53
   specs:
     actioncable (5.0.0.beta3)
       actionpack (= 5.0.0.beta3)
@@ -103,7 +103,7 @@ GEM
     arel (7.0.0)
     bcrypt (3.1.11)
     builder (3.2.2)
-    byebug (8.2.2)
+    byebug (8.2.4)
     coderay (1.1.1)
     coffee-script (2.4.1)
       coffee-script-source
@@ -114,10 +114,10 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
-    factory_girl (4.5.0)
+    factory_girl (4.7.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.6.0)
-      factory_girl (~> 4.5.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     faker (1.6.3)
       i18n (~> 0.5)
@@ -125,10 +125,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    geocoder (1.3.1)
+    geocoder (1.3.4)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    gmaps4rails (2.1.2)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -144,6 +143,8 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    i18n-debug (1.1.0)
+      i18n (< 1)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -168,7 +169,7 @@ GEM
       activemodel
       activesupport
       addressable (~> 2.3)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nio4r (1.2.1)
@@ -195,7 +196,6 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    polylines (0.3.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -203,7 +203,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
-    puma (3.2.0)
+    puma (3.4.0)
     rack (2.0.0.alpha)
       json
     rack-cors (0.4.0)
@@ -217,9 +217,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-i18n (4.0.2)
-      i18n (~> 0.6)
-      rails (>= 4.0)
     rake (11.1.2)
     ref (2.0.0)
     responders (2.1.2)
@@ -242,7 +239,7 @@ GEM
     rspec-support (3.1.2)
     ruby_parser (3.8.1)
       sexp_processor (~> 4.1)
-    sass (3.4.21)
+    sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -254,8 +251,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
-    spring (1.6.4)
-    sprockets (3.5.2)
+    spring (1.7.1)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
@@ -294,8 +291,8 @@ DEPENDENCIES
   faker
   friendly_id (~> 5.1.0)
   geocoder
-  gmaps4rails
   haml-rails
+  i18n-debug
   jbuilder (~> 2.0)
   jquery-rails
   missing_validators
@@ -303,12 +300,10 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   pg
-  polylines
   pry-byebug
   puma
   rack-cors
   rails!
-  rails-i18n
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   simple_form

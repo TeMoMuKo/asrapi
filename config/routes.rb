@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "map#index"
+  root "application#index"
 
   devise_for :users, controllers: {
     confirmations: 'confirmations',

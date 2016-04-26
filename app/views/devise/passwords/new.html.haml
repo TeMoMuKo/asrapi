@@ -1,9 +1,11 @@
 #devise
   %h2 Przywracanie hasła
-  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :email, label: false, placeholder: "Adres email", required: true, autofocus: true
-    .form-actions
-      = f.button :submit, "Wyślij", class: "btn"
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = devise_error_messages!
+
+    .field
+      = f.email_field :email, label: false, placeholder: "Adres email", required: true, autofocus: true
+
+    .actions
+      = f.submit "Wyślij", class: "btn"
   = render "devise/shared/links"

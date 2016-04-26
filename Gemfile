@@ -14,9 +14,6 @@ gem "puma"
 gem "geocoder"
 gem "haml-rails"
 gem "simple_form"
-gem "rails-i18n"
-gem "gmaps4rails"
-gem "polylines"
 gem "friendly_id", "~> 5.1.0"
 gem "rack-cors", require: "rack/cors"
 
@@ -34,6 +31,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "factory_girl_rails"
   gem "faker"
+  gem "i18n-debug"
 end
 
 group :development do

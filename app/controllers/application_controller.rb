@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
+  def index
+    redirect_to "https://autostoprace.pl"
+  end
+
   def record_not_found
     head :not_found
   end
