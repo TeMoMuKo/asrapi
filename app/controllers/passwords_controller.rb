@@ -17,7 +17,11 @@ class PasswordsController < Devise::PasswordsController
   # PUT /resource/password
   def update
     @title = "Przywracanie hasła do aplikacji Auto Stop Race"
-    super.tap { sign_out }
+    super.tap do
+      resource.tokens = {}
+      resource.save
+      sign_out
+    end
   end
 
   # protected
