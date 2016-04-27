@@ -4,9 +4,9 @@
     = devise_error_messages!
     = f.hidden_field :reset_password_token
     .field
-      = f.input :password, label: false, placeholder: "Nowe hasło (min. 8 znaków)", required: true, autofocus: true
+      = f.password_field :password, label: false, placeholder: "Nowe hasło (min. 8 znaków)", required: true, autofocus: true, autocomplete: "off"
     .field
-      = f.input :password_confirmation, label: false, placeholder: "Potwierdź nowe hasło", required: true
+      = f.password_field :password_confirmation, label: false, placeholder: "Potwierdź nowe hasło", required: true, autocomplete: "off"
     .actions
       = f.submit "Zmień hasło", class: "btn"
   = render "devise/shared/links"
