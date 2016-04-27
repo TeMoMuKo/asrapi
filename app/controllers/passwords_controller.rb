@@ -1,8 +1,8 @@
 class PasswordsController < Devise::PasswordsController
-  # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    @title = "Przywracanie hasła do aplikacji Auto Stop Race"
+    super
+  end
 
   # POST /resource/password
   # def create
@@ -16,6 +16,7 @@ class PasswordsController < Devise::PasswordsController
 
   # PUT /resource/password
   def update
+    @title = "Przywracanie hasła do aplikacji Auto Stop Race"
     super.tap { sign_out }
   end
 

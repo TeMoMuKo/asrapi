@@ -1,6 +1,12 @@
 class ConfirmationsController < Devise::ConfirmationsController
 
+  def new
+    @title = "Potwierdź swoje konto by skorzystać z aplikacji Auto Stop Race"
+    super
+  end
+
   def show
+    @title = "Potwierdź swoje konto by skorzystać z aplikacji Auto Stop Race"
     if params[:confirmation_token].present?
       @original_token = params[:confirmation_token]
     elsif params[resource_name].try(:[], :confirmation_token).present?
@@ -13,6 +19,7 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def confirm
+    @title = "Potwierdź swoje konto by skorzystać z aplikacji Auto Stop Race"
     @original_token = params[resource_name].try(:[], :confirmation_token)
     self.resource = resource_class.find_by_confirmation_token! @original_token
     resource.assign_attributes(permitted_params) unless params[resource_name].nil?
