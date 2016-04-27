@@ -5,9 +5,9 @@
     = form.hidden_field :confirmation_token, value: @original_token
 
     .field
-      = form.password_field :password, placeholder: "Podaj hasło (min. 8 znaków)", autofocus: true
+      = form.password_field :password, placeholder: "Podaj hasło (min. 8 znaków)", autofocus: true, required: true
     .field
-      = form.password_field :password_confirmation, placeholder: "Potwierdź hasło"
+      = form.password_field :password_confirmation, placeholder: "Potwierdź hasło", required: true
 
     .actions
       = form.submit "Zakończ rejestrację", class: "btn"
