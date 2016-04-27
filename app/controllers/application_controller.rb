@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
-    redirect_to "https://autostoprace.pl"
+    redirect_to "http://autostoprace.pl"
   end
 
   def record_not_found
