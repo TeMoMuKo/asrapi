@@ -7,7 +7,9 @@ class TeamsController < ApplicationController
   #
   # GET /teams
   def index
-    @teams = Team.all
+    @teams = Team.includes(:locations)
+      .order("locations.created_at ASC")
+    render json: @teams.as_json({include: { locations: {} } })
   end
 
   ##
@@ -23,5 +25,9 @@ class TeamsController < ApplicationController
   private
   def set_team
     @team = Team.friendly.find(params[:id])
+  end
+
+  def to_json(thing)
+    thing.to_json({include: { locations: {} } })
   end
 end

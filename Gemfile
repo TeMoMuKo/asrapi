@@ -1,11 +1,10 @@
 source "https://rubygems.org"
 
-gem "rails", github: "rails/rails"
-
+gem "rails"
 gem "sqlite3"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
-gem "coffee-rails", github: "rails/coffee-rails"
+gem "coffee-rails"
 gem "therubyracer", platforms: :ruby
 gem "jquery-rails"
 gem "turbolinks"
@@ -16,34 +15,30 @@ gem "haml-rails"
 gem "simple_form"
 gem "friendly_id", "~> 5.1.0"
 gem "rack-cors", require: "rack/cors"
-
-gem "devise", :github => "plataformatec/devise", :branch => "master"
-gem "bcrypt", "~> 3.1.7"
-gem "devise_token_auth", :github => "lynndylanhurley/devise_token_auth", :branch => "master"
-gem "omniauth"
-gem "omniauth-facebook"
-gem "omniauth-google-oauth2"
+gem "devise"
+gem "bcrypt"
+gem "devise_token_auth"
 gem "missing_validators"
-
 gem "devise-i18n"
-gem "rails-i18n", "~> 5.0.0.beta3"
+gem "rails-i18n"
+gem "pg"
+gem "oj"
+gem "oj_mimic_json"
 
 group :development, :test do
   gem "byebug"
   gem "pry-byebug"
+  gem "pry-rails"
   gem "rspec-rails", "~> 3.0"
   gem "factory_girl_rails"
   gem "faker"
   gem "i18n-debug"
+  gem "bullet"
 end
 
 group :development do
-  gem "web-console", github: "rails/web-console"
+  gem "web-console"
   gem "spring"
-end
-
-group :production do
-  gem "pg"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
