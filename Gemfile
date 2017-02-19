@@ -22,6 +22,8 @@ gem "missing_validators"
 gem "devise-i18n"
 gem "rails-i18n"
 gem "pg"
+gem "carrierwave"
+gem "carrierwave-base64"
 
 group :development, :test do
   gem "byebug"
