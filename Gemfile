@@ -22,8 +22,6 @@ gem "missing_validators"
 gem "devise-i18n"
 gem "rails-i18n"
 gem "pg"
-gem "oj"
-gem "oj_mimic_json"
 
 group :development, :test do
   gem "byebug"
