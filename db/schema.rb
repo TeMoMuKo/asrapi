@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415093232) do
+ActiveRecord::Schema.define(version: 20170219122343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160415093232) do
     t.string   "address"
     t.string   "country"
     t.string   "country_code"
+    t.string   "image",                                 default: ""
     t.index ["team_id"], name: "index_locations_on_team_id", using: :btree
   end
 
