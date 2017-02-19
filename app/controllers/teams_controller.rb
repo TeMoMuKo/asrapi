@@ -2,14 +2,26 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show]
   respond_to :json
 
-  ##
-  # Returns a list of all Teams with their last known location
-  #
-  # GET /teams
+  # Praise PostgreSQL!
   def index
-    @teams = Team.includes(:locations)
-      .order("locations.created_at ASC")
-    render json: @teams.as_json({include: { locations: {} } })
+    sql = <<-SQL
+      SELECT array_to_json(array_agg(teams))
+      FROM (
+        SELECT id,name,slug,
+          (
+            SELECT row_to_json(location)
+            FROM (
+              SELECT id,latitude,longitude,message,team_id,created_at,updated_at,address,country,country_code
+              FROM locations
+              WHERE team_id = teams.id
+              ORDER BY created_at DESC
+              LIMIT 1
+            ) location
+          ) as last_location
+        FROM teams
+      ) teams
+    SQL
+    render json: ActiveRecord::Base.connection.select_value(sql)
   end
 
   ##
@@ -25,9 +37,5 @@ class TeamsController < ApplicationController
   private
   def set_team
     @team = Team.friendly.find(params[:id])
-  end
-
-  def to_json(thing)
-    thing.to_json({include: { locations: {} } })
   end
 end
