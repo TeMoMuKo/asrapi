@@ -8,7 +8,7 @@ gem "coffee-rails"
 gem "therubyracer", platforms: :ruby
 gem "jquery-rails"
 gem "turbolinks"
-gem "jbuilder", "~> 2.0"
+gem "jbuilder"
 gem "puma"
 gem "geocoder"
 gem "haml-rails"

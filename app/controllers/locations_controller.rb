@@ -3,26 +3,13 @@ class LocationsController < ApplicationController
   before_action :set_team, only: [:index]
   before_action :set_location, only: [:show]
 
-  ##
-  # Returns a list of Locations for a given Team
-  #
-  # GET /team/:team_id/locations
-  #
-  # params:
-  #     team_id - id of Team to fetch locations for
   def index
     @locations = @team.locations
   end
 
-  ##
-  # Create a new location for a given team
-  #
-  # POST /locations
-  #
-  # params:
-  #     team_id - id of Team to create a location for
   def create
-    @location = current_user.team.locations.new(location_params)
+    @location = Location.new(location_params)
+    @location.team = current_user.team
     if @location.save
       render json: @location, status: :created, location: @location
     else
@@ -36,7 +23,7 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:latitude, :longitude, :message)
+    params.require(:location).permit(:latitude, :longitude, :message, :image)
   end
 
 end

@@ -263,7 +263,7 @@ DEPENDENCIES
   geocoder
   haml-rails
   i18n-debug
-  jbuilder (~> 2.0)
+  jbuilder
   jquery-rails
   missing_validators
   pg
