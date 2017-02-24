@@ -24,6 +24,8 @@ gem "rails-i18n"
 gem "pg"
 gem "carrierwave"
 gem "carrierwave-base64"
+gem "apipie-rails"
+gem "decent_exposure"
 
 group :development, :test do
   gem "byebug"
