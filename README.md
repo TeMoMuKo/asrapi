@@ -1,24 +1,12 @@
-## README
+# AutoStop Race API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I have no idea what I am doing edition.
 
-Things you may want to cover:
+## TODO
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* [X] Refactor to use `decent_exposure`
+* [X] Use `apipie-rails`
+* [ ] Use `dotenv` to store credentials
+* [ ] Deprecate `v1` paths to force users to update application on Google Play
+* [ ] Check if everything works on iOS.
+* [ ] Stop Rails from logging `image` parameter in logs
