@@ -27,6 +27,14 @@ gem "carrierwave-base64"
 gem "apipie-rails"
 gem "decent_exposure"
 
+group :development do
+  gem "capistrano", "~> 3.1", require: false
+  gem "capistrano-rails", "~> 1.1", require: false
+  gem "capistrano-rvm", require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano3-puma", require: false
+end
+
 group :development, :test do
   gem "byebug"
   gem "pry-byebug"

@@ -1,0 +1,2 @@
+[staging]
+138.201.100.156 ansible_user=root application_name=asrapi
