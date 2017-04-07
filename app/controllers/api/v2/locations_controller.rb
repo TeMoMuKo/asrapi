@@ -15,6 +15,7 @@ module Api::V2
     before_action :authenticate_user!, only: [:create]
     expose :team, find_by: :slug
     expose :locations, -> { team.locations }
+    expose :location, build_params: :location_params
 
     api :GET, "/v2/teams/:slug/locations", "Returns all locations for a given team"
     param :slug, String, "Name of team, ex. team-600"
@@ -24,7 +25,19 @@ module Api::V2
     api :POST, "/v2/locations", "Create a new locations when authenticated"
     error 422, "Invalid location, see response for errors"
     param_group :location
-    def create
+    def create;
+      location.team = current_user.team
+      if location.save
+        render json: location, status: :created
+      else
+        render json: location.errors, status: :unprocessable_entity
+      end
+    end
+
+    private
+
+    def location_params
+      params.require(:location).permit(:latitude, :longitude, :message, :image)
     end
   end
 end
