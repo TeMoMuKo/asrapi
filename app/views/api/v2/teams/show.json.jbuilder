@@ -1,4 +1,5 @@
-json.(team, :id, :name, :last_location)
+json.(team, :id, :name)
+json.last_location team.last_location, partial: "api/v2/locations/location", as: :location
 json.team_number team.number
 json.users team.users do |user|
   json.id user.id
