@@ -15,7 +15,7 @@ module Api::V2
             (
               SELECT row_to_json(location)
               FROM (
-                SELECT id,latitude,longitude,message,team_id,created_at,updated_at,address,country,country_code,NULLIF(image, '')
+                SELECT id,latitude,longitude,message,team_id,created_at,updated_at,address,country,country_code,image
                 FROM locations
                 WHERE team_id = teams.id
                 ORDER BY created_at DESC
