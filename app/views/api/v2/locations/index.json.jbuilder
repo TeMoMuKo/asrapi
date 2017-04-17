@@ -7,7 +7,7 @@ json.array! locations do |location|
   json.country location.country
   json.country_code location.country_code
 
-  json.image location.image_url
+  json.image location&.image&.file&.filename
   json.created_at location.created_at
   json.updated_at location.updated_at
 end

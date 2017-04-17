@@ -1,4 +1,4 @@
 json.(location, :id, :latitude, :longitude, :message, :team_id, :created_at, :updated_at, :address, :country, :country_code)
 binding.pry
-json.image asset_url(location&.image_url)
+json.image location&.image&.file&.filename
 json.team_number location.team.number

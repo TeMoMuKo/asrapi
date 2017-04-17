@@ -28,7 +28,7 @@ module Api::V2
     def create;
       location.team = current_user.team
       if location.save
-        render json: location, status: :created
+        render "api/v2/locations/show", status: :created
       else
         render json: location.errors, status: :unprocessable_entity
       end
