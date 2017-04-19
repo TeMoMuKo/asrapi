@@ -25,7 +25,7 @@ class ConfirmationsController < Devise::ConfirmationsController
     resource.assign_attributes(permitted_params) unless params[resource_name].nil?
 
     if resource.valid? && resource.password_match?
-      self.resource.confirm!
+      self.resource.confirm
       redirect_to "http://www.autostoprace.pl/konto-zostalo-aktywowane/"
     else
       render :action => 'show'
