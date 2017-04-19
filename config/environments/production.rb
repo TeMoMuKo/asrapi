@@ -86,7 +86,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :port           => 587,
-  :address        => 'mail.autostoprace.pl',
+  :address        => 's21.linuxpl.com',
   :user_name      => Rails.application.secrets.email_username,
   :password       => Rails.application.secrets.email_password,
   :domain         => Rails.application.secrets.email_domain,
