@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope :v1 do
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-        sessions: "sessions",
-        token_validations: "token_validations"
+        sessions: "api/v1/sessions",
+        token_validations: "token_validations",
       }
     end
 
