@@ -2,7 +2,7 @@ module Api
   module V1
     class SessionsController < DeviseTokenAuth::SessionsController
       def create
-        render json: { error: "Zaktualizuj aplikację do najnowszej wersji" }, status: 418
+        render json: { errors: ["Zaktualizuj aplikację do najnowszej wersji"] }, status: 418
       end
 
       def render_create_success
