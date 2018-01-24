@@ -8,7 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Asr
   class Application < Rails::Application
-    config.middleware.insert_before 0, "Rack::Cors", :debug => true, :logger => (-> { Rails.logger }) do
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.log_tags  = [:subdomain, :uuid]
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins "mapa.autostoprace.pl"
 

@@ -1,0 +1,29 @@
+version: "3"
+services:
+  postgres:
+    image: 'postgres:9.6-alpine'
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  app:
+    depends_on:
+      - "postgres"
+    build: .
+    volumes:
+      - ".:/asrapi"
+      - "gems:/ruby_gems"
+    ports:
+      - "3000:3000"
+    env_file:
+      - ".env"
+
+volumes:
+  postgres:
+    external: false
+  gems:
+    external: false
