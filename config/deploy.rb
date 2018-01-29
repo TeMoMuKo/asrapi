@@ -1,6 +1,6 @@
 set :application, "asrapi"
 set :repo_url, "git@github.com:TeMoMuKo/asrapi.git"
-set :branch, "try-fixing-dem-views"
+set :branch, "master"
 
 set :user, "asrapi"
 set :puma_threads, [2, 4]
@@ -36,8 +36,8 @@ namespace :deploy do
   desc "Make sure local repository is in sync with remote."
   task :check_revision do
     on roles(:app) do
-      unless `git rev-parse HEAD` == `git rev-parse origin/try-fixing-dem-views`
-        puts "WARNING: HEAD is not the same as origin/try-fixing-dem-views"
+      unless `git rev-parse HEAD` == `git rev-parse origin/master`
+        puts "WARNING: HEAD is not the same as origin/master"
         puts "Run `git push` to sync changes."
         exit
       end
