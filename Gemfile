@@ -32,6 +32,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1', require: false
   gem 'capistrano-bundler', '~> 1.2', require: false
   gem 'capistrano3-puma', require: false
+  gem 'capistrano-rails-collection'
 end
 
 group :development, :test do
