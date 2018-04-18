@@ -1,4 +1,4 @@
-module Api::V2
+module Api::V3
   class TeamsController < ApiController
     resource_description do
       formats ["json"]
@@ -6,7 +6,7 @@ module Api::V2
 
     expose :team, find_by: :slug
 
-    api :GET, "/v2/teams", "Returns a list of all teams with their latest known location"
+    api :GET, "/v3/teams", "Returns a list of all teams with their latest known location"
     def index
       sql = <<-SQL
         SELECT array_to_json(array_agg(teams))
@@ -28,7 +28,7 @@ module Api::V2
       render json: ActiveRecord::Base.connection.select_value(sql)
     end
 
-    api :GET, "/v2/teams/:slug", "Returns a team with all of it's locations"
+    api :GET, "/v3/teams/:slug", "Returns a team with all of it's locations"
     def show; end
   end
 end

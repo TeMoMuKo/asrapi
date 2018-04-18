@@ -1,4 +1,4 @@
-module Api::V2
+module Api::V3
   class LocationsController < ApiController
     resource_description do
       formats ["json"]
@@ -17,18 +17,18 @@ module Api::V2
     expose :locations, -> { team.locations }
     expose :location, build_params: :location_params
 
-    api :GET, "/v2/teams/:slug/locations", "Returns all locations for a given team"
+    api :GET, "/v3/teams/:slug/locations", "Returns all locations for a given team"
     param :slug, String, "Name of team, ex. team-600"
     error 404, "Team doesn't exist"
     def index; end
 
-    api :POST, "/v2/locations", "Create a new locations when authenticated"
+    api :POST, "/v3/locations", "Create a new locations when authenticated"
     error 422, "Invalid location, see response for errors"
     param_group :location
     def create;
       location.team = current_user.team
       if location.save
-        render "api/v2/locations/show", status: :created
+        render "api/v3/locations/show", status: :created
       else
         render json: location.errors, status: :unprocessable_entity
       end
