@@ -1,0 +1,15 @@
+module Api
+  module V2
+    class SessionsController < DeviseTokenAuth::SessionsController
+      def create
+        render json: { errors: ["Zaktualizuj aplikację do najnowszej wersji"] }, status: 418
+      end
+
+      def render_create_success
+        render json: {
+          data: @resource.as_json(methods: :team_number)
+        }
+      end
+    end
+  end
+end
